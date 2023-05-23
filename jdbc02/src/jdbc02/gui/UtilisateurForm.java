@@ -39,6 +39,8 @@ public class UtilisateurForm extends JFrame {
     // Constructor
     public UtilisateurForm() {
         super("Fenetre");
+        this.model = new Utilisateur();
+        
         this.setSize(500, 350);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

@@ -28,11 +28,10 @@ public class Menu extends JPanel {
         JLabel caisse = new JLabel("Caisse");
         JLabel utilisateurs = new JLabel("Utilisateurs");
         
-        ImageIcon icon = new ImageIcon(
-                    Objects.requireNonNull(this.getClass()).getResource("images.home.png"));
+        //ImageIcon icon = new ImageIcon(Objects.requireNonNull(this.getClass()).getResource("images.home.png"));
         
         // 
-        accueil.setIcon(icon);
+        //accueil.setIcon(icon);
         
         accueil.setHorizontalTextPosition(JLabel.LEFT);
         accueil.setVerticalTextPosition(JLabel.CENTER);

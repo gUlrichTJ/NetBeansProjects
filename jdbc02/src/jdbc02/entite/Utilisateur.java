@@ -17,6 +17,16 @@ public class Utilisateur {
     private String motDePasse;
     private int nombreConnexion;
 
+    public Utilisateur() {
+        this.id = 0;
+        this.identifiant = "";
+        this.nom = "";
+        this.prenom = "";
+        this.age = 0;
+        this.motDePasse = "";
+        this.nombreConnexion = 0;
+    }
+    
     public Utilisateur(int id, String identifiant, String nom, String prenom, int age, String motDePasse, int nombreConnexion) {
         this.id = id;
         this.identifiant = identifiant;
