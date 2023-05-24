@@ -5,6 +5,7 @@ package jdbc02.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -46,25 +47,44 @@ public class UtilisateurForm extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLayout(new BorderLayout());
         
-        // Pour tout ce qui est au centre
+        /**
+         * Pour tout ce qui est au centre 
+         */
         JPanel centre = new JPanel();
         centre.setLayout(new GridLayout(3, 2));
         centre.setBorder(new LineBorder(Color.yellow, 3));
         
         // Ce que nous mettrons au centre
+        JPanel idEtMot = new JPanel();
+        
         JLabel id = new JLabel("ID");
         JTextField textFieldId = new JTextField();
+        textFieldId.setPreferredSize(new Dimension(50, 20));
+        
+        idEtMot.add(id);    idEtMot.add(textFieldId);
+        
+        JPanel nomEtMot = new JPanel();
         
         JLabel nom = new JLabel("Nom");
         JTextField textFieldNom = new JTextField();
         
+        textFieldNom.setPreferredSize(new Dimension(100, 20));
+        
+        nomEtMot.add(nom);  nomEtMot.add(textFieldNom);
+        
+        JPanel prenomEtMot = new JPanel();
+        
         JLabel prenom = new JLabel("Prenom");
         JTextField textFieldPrenom = new JTextField();
         
+        // La dimension de la zone de saisie du prénom
+        textFieldPrenom.setPreferredSize(new Dimension(100, 20));
+        
+        prenomEtMot.add(prenom);    prenomEtMot.add(textFieldPrenom);
+        
         // Nous ajoutons tout au centre
-        centre.add(id);         centre.add(textFieldId);
-        centre.add(nom);        centre.add(textFieldNom);
-        centre.add(prenom);     centre.add(textFieldPrenom);
+        centre.add(idEtMot);    centre.add(nomEtMot);
+        centre.add(prenomEtMot);
         
         JPanel bas = new JPanel();
         bas.setLayout(new BorderLayout());
@@ -99,7 +119,7 @@ public class UtilisateurForm extends JFrame {
         bas.add(valider, BorderLayout.EAST);
         
         // Nous ajoutons le centre au frame
-        this.add(centre, BorderLayout.CENTER);
+        this.add(centre/*, BorderLayout.CENTER*/);
     
         // Nous ajoutons le bas au frame
         this.add(bas, BorderLayout.SOUTH);
