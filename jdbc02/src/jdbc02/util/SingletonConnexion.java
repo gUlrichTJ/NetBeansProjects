@@ -73,8 +73,7 @@ public class SingletonConnexion {
             Class.forName("org.mariadb.jdbc.Driver");
             System.out.println("Verification");
             
-            Connection instance = DriverManager.getConnection("jdbc:mariadb://localhost:3306/jdbc01",
-                    "root", "");
+            Connection instance = DriverManager.getConnection("jdbc:mariadb://localhost:3306/jdbc01","root", "");
             System.out.println("Vérification establishment of connection");
             
             return instance;

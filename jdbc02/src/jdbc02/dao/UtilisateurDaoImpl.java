@@ -31,7 +31,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
         try {
             connexion = SingletonConnexion.getInstance();
             sql = "insert into utilisateurs(id, identifiant, mot_de_passe, nombre_connexion) "
-                    + "values(5, 'hello', 'hello', 5);";
+                    + "values(, 'hello', 'hello', 5);";
             preparedStatement = connexion.prepareStatement(sql);
             
             preparedStatement.setInt(1, 0);
@@ -48,7 +48,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
     public Utilisateur modifier(Utilisateur utilisateur) {
         try {
             connexion = SingletonConnexion.getInstance();
-            sql = "update utilisateurs set identifiant = ?, mot_de_passe = ? where id = ?;";
+            sql = "update utilisateurs set identifiant = "+utilisateur.getIdentifiant()+", mot_de_passe = "+utilisateur.getMotDePasse()+" where id = "+utilisateur.getId()+";";
             preparedStatement = connexion.prepareStatement(sql);
             
             preparedStatement.setString(1, utilisateur.getIdentifiant());
@@ -80,7 +80,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
     public Utilisateur trouver(int id) {
         try {
             connexion = SingletonConnexion.getInstance();
-            sql = "select * from utilisateurs where id = ?;";
+            sql = "select * from utilisateurs where id = "+id+";";
             preparedStatement = connexion.prepareStatement(sql);
             
             preparedStatement.setInt(1, id);
@@ -104,7 +104,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
     public Utilisateur trouver(String identifiant) {
         try {
             connexion = SingletonConnexion.getInstance();
-            sql = "select * from utilisateurs where identifiant = ?;";
+            sql = "select * from utilisateurs where identifiant = "+identifiant+";";
             preparedStatement = connexion.prepareStatement(sql);
             
             preparedStatement.setString(1, identifiant);
@@ -152,7 +152,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
     public void supprimer(int id) {
         try {
             connexion = SingletonConnexion.getInstance();
-            sql = "delete from utilisateurs where id = ?;";
+            sql = "delete from utilisateurs where id = "+id+";";
             preparedStatement = connexion.prepareStatement(sql);
             
             preparedStatement.setInt(1, id);

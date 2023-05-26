@@ -90,7 +90,62 @@ public class UtilisateurForm extends JFrame {
         bas.setLayout(new BorderLayout());
         bas.setBorder(new LineBorder(Color.red, 2));
         
-        // Nous ajoutons une action sur le bouton valider
+        // Nous ajoutons une action sur le textFieldId
+        textFieldNom.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                model.setNom(textFieldNom.getText());
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                model.setNom(textFieldNom.getText());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+               model.setNom(textFieldNom.getText());
+            }
+        });
+        
+        // Pous le prenom
+        
+        textFieldPrenom.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                model.setPrenom(textFieldPrenom.getText());
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                model.setPrenom(textFieldPrenom.getText());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+               model.setPrenom(textFieldPrenom.getText());
+            }
+        });
+        
+        // Pour id
+        textFieldId.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                model.setId(Integer.parseInt(textFieldId.getText()));
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                model.setId(Integer.parseInt(textFieldId.getText()));
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+               model.setId(Integer.parseInt(textFieldId.getText()));
+            }
+        });
+        
+         // Nous ajoutons une action sur le bouton valider
         this.valider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -98,22 +153,6 @@ public class UtilisateurForm extends JFrame {
             }
         });
         
-        // Nous ajoutons une action sur le textFieldId
-        textFieldId.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                model.setNom(nom.getText());
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                model.setNom(nom.getText());
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-            }
-        });
         
         // Nous ajoutons le bouton valider au bas de la fenetre
         bas.add(valider, BorderLayout.EAST);

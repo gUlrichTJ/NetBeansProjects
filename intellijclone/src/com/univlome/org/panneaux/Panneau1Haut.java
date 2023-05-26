@@ -111,6 +111,19 @@ public class Panneau1Haut extends JMenuBar {
     
     // JMenu
     JMenu edit = new JMenu("Edit");
+    
+        // JMenuItems for edit
+        JMenuItem undo = new JMenuItem("Undo            Ctrl+Z");
+        JMenuItem redo = new JMenuItem("Redo      Ctrl+Shift+Z");
+        JMenuItem cut = new JMenuItem("Cut              Ctrl+X");
+        JMenuItem copy = new JMenuItem("Copy            Ctrl+C");
+        JMenuItem copyPathReference = new JMenuItem("Copy Path/Reference...");
+        
+        JMenu paste = new JMenu("Paste");
+    
+            // JMenuItems for paste
+            JMenuItem pasteSubMenu = new JMenuItem("Paste              Ctrl+V");
+        
     JMenu view = new JMenu("View");
     JMenu navigate = new JMenu("Navigate");
     JMenu code = new JMenu("Code");
@@ -200,7 +213,8 @@ public class Panneau1Haut extends JMenuBar {
         
         file.add(newProject);
             
-            
+            export.add(filesOrSelection);
+            export.add(exportToZip);
         
         file.add(export);   
         file.add(print);
