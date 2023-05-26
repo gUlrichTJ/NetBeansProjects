@@ -17,7 +17,7 @@ import javax.swing.JMenuItem;
  */
 public class Panneau1Haut extends JMenuBar {
     
-    Fenetre fenetre;
+    private Fenetre fenetre;
     // We create the JMenus of the menu bar
     JMenu file = new JMenu("File");
     
@@ -159,6 +159,42 @@ public class Panneau1Haut extends JMenuBar {
             JMenuItem previousHilightedUsage = new JMenuItem("Previous Hilighted Usage");
             JMenuItem recentFindUsages = new JMenuItem("Recent Find Usages");
             
+        JMenuItem columnSelectionMode = new JMenuItem("Column Selection Mode       Alt+Shift+Insert");
+        JMenuItem selectAll2 = new JMenuItem("Select All            Ctrl+A");
+        JMenuItem addCaretsToEnds = new JMenuItem("Add Carret to Ends of Selected Lines  Alt+Shift+G");
+        JMenuItem extendsSelection = new JMenuItem("Extend Selection            Ctrl+W");
+        JMenuItem shrinkSelection = new JMenuItem("Shrink Selection         Ctrl+Shift+W");
+        JMenuItem toggleCase = new JMenuItem("Toggle Case           Ctrl+Shift+U");
+        JMenuItem joinLines = new JMenuItem("Join Lines         Ctrl+Shift+J");
+        JMenuItem duplicateLine = new JMenuItem("Duplicate Line             Ctrl+D");
+        JMenuItem fillParagraph = new JMenuItem("Fill Paragraph");
+        JMenuItem sortLines = new JMenuItem("Sort Lines");
+        JMenuItem reverseLines = new JMenuItem("Reverse Lines");
+        JMenuItem transpose = new JMenuItem("Transpose");
+        JMenuItem indentSelection = new JMenuItem("Indent Line");
+        JMenuItem unindentLine = new JMenuItem("Unindent Line or Selection");
+        
+        JMenu convertIndents = new JMenu("Convert Indents");
+        
+            // We create the JMenuItems for convertIndents
+            JMenuItem toSpaces = new JMenuItem("To Spaces");
+            JMenuItem toTabs = new JMenuItem("To Tabs");
+        
+        JMenu macros = new JMenu("Macros");
+            // We create the JMenuItems for macros
+            JMenuItem playBack = new JMenuItem("Play Back Last Macro");
+            JMenuItem startMacro = new JMenuItem("Start Macro Recording");
+            JMenuItem editMacro = new JMenuItem("Edit Macros");
+            JMenuItem playSaved = new JMenuItem("Play Saved Macros...");
+            
+        JMenu bookmarks = new JMenu("Bookmarks");
+        
+            // JMenuItems for bookmarks
+            JMenuItem previousLineBookmark = new JMenuItem("Previous Line Bookmark");
+            JMenuItem nextLineBookmark = new JMenuItem("Next Line Bookmark");
+            JMenuItem showLineBookmarks = new JMenuItem("Show Line BOokmarks...     Shift+F11");
+            JMenuItem goToMnemonic = new JMenuItem("Go to Mnemonic...       Ctrl+Shift+F11");
+            
     JMenu view = new JMenu("View");
     JMenu navigate = new JMenu("Navigate");
     JMenu code = new JMenu("Code");
@@ -171,7 +207,9 @@ public class Panneau1Haut extends JMenuBar {
     JMenu help = new JMenu("Help");
 
     // Constructor
-    public Panneau1Haut() {
+    public Panneau1Haut(Fenetre fenetre) {
+        
+        this.fenetre = fenetre;
         /**
          Pour ajouter des sous-menus à un élément de menu, vous pouvez créer un 
          * autre JMenu et l'ajouter à l'élément de menu parent.
@@ -316,6 +354,43 @@ public class Panneau1Haut extends JMenuBar {
             
             edit.add(findUsages);
             
+            // We continue adding the JMenuItems
+            edit.add(selectAll2);
+            edit.add(addCaretsToEnds);
+            edit.add(extendsSelection);
+            edit.add(shrinkSelection);
+            edit.add(toggleCase);
+            edit.add(joinLines);
+            edit.add(duplicateLine);
+            edit.add(fillParagraph);
+            edit.add(sortLines);
+            edit.add(reverseLines);
+            edit.add(transpose);
+            edit.add(indentSelection);
+            edit.add(unindentLine);
+                
+                // We must add the JMenuItems
+                convertIndents.add(toSpaces);
+                convertIndents.add(toTabs);
+               
+            edit.add(convertIndents);
+                
+                // Adding the JMenuItems
+                macros.add(playBack);
+                macros.add(startMacro);
+                macros.add(editMacro);
+                macros.add(playSaved);
+            edit.add(macros);
+            
+                // Adding the JMenuItems
+                bookmarks.add(previousLineBookmark);
+                bookmarks.add(nextLineBookmark);
+                bookmarks.add(showLineBookmarks);
+                bookmarks.add(goToMnemonic);
+                
+            edit.add(bookmarks);
+
+            
         this.add(edit);
         this.add(navigate);
         this.add(code);
@@ -325,6 +400,16 @@ public class Panneau1Haut extends JMenuBar {
         this.add(tools);
         this.add(vcs);
         this.add(help);
+    }
+    
+    // Getters and setters
+
+    public Fenetre getFenetre() {
+        return fenetre;
+    }
+
+    public void setFenetre(Fenetre fenetre) {
+        this.fenetre = fenetre;
     }
 
 }

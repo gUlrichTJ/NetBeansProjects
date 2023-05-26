@@ -15,11 +15,11 @@ import javax.swing.JFrame;
 public class Fenetre extends JFrame {
     
     // We create an instance of Panneau1Haut
-    Panneau1Haut panneau1Haut = new Panneau1Haut();
+    Panneau1Haut panneau1Haut = new Panneau1Haut(this);
     
     // Constructor
     public Fenetre() {
-        this.setTitle("Intellij clone");
+        this.setTitle("AndroidStudio clone");
         this.setSize(1000, 650);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
