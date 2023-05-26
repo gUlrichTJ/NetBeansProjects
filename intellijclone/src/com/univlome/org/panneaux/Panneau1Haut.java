@@ -4,6 +4,9 @@
  */
 package com.univlome.org.panneaux;
 
+import com.univlome.org.fenetres.Fenetre;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -14,6 +17,7 @@ import javax.swing.JMenuItem;
  */
 public class Panneau1Haut extends JMenuBar {
     
+    Fenetre fenetre;
     // We create the JMenus of the menu bar
     JMenu file = new JMenu("File");
     
@@ -87,8 +91,19 @@ public class Panneau1Haut extends JMenuBar {
         JMenuItem restoreDefaultSettings = new JMenuItem("Restore Default Settings...");
         JMenuItem settingsSychronise = new JMenuItem("Settings Sychronise...");
 
-    JMenuItem newProject = new JMenuItem("New Projects Setup");
-    JMenuItem export = new JMenuItem("Export");
+    JMenu newProject = new JMenu("New Projects Setup");
+    
+        // JMenuItems for newProject
+        JMenuItem settingsForNewProject = new JMenuItem("Settings for New Projects...");
+        JMenuItem runConfiguration = new JMenuItem("Run Configuration Templates...");
+        JMenuItem defaultProjectStructure = new JMenuItem("Default Project Structure...");
+        
+    JMenu export = new JMenu("Export");
+        
+        // JMenuItems for export
+        JMenuItem filesOrSelection = new JMenuItem("Files or Selection to HTML...");
+        JMenuItem exportToZip = new JMenuItem("Export to Zip File");
+    
     JMenuItem print = new JMenuItem("Print...");
     JMenuItem powerSave = new JMenuItem("Power Save Mode");
     JMenuItem essential = new JMenuItem("Essential Hilighting");
@@ -176,12 +191,31 @@ public class Panneau1Haut extends JMenuBar {
             manage.add(restoreDefaultSettings);
             manage.add(settingsSychronise);
         
-        file.add(manage);   
+        file.add(manage);
+        
+            // We add the JMenuItems in newProject
+            newProject.add(settingsForNewProject);
+            newProject.add(runConfiguration);
+            newProject.add(defaultProjectStructure);
+        
         file.add(newProject);
+            
+            
+        
         file.add(export);   
         file.add(print);
         file.add(powerSave);
         file.add(essential);
+        
+            // Nous ajoutons une actions sur le bouton exit
+            exit.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Nous fermons la fenetre lorsqu'on clique sur le bouton exit
+                    fenetre.dispose();
+                }
+            });
+        
         file.add(exit);
         
         // We add fileMenuBar to the JMenuBar

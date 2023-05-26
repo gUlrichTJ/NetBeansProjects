@@ -18,9 +18,9 @@ import java.util.logging.Logger;
  */
 public class SingletonConnexion {
     
-    private static Connection instance;
+    // private static Connection instance;
     
-    static {
+    /**static {
         System.out.println("Bonjour");
         
         Properties p = new Properties();
@@ -61,13 +61,27 @@ public class SingletonConnexion {
                 Logger.getLogger(SingletonConnexion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }
+    }*/
     
     private SingletonConnexion() {
         
     }
     
     public static Connection getInstance() {
-        return instance;
+        try {
+            
+            Class.forName("org.mariadb.jdbc.Driver");
+            System.out.println("Verification");
+            
+            Connection instance = DriverManager.getConnection("jdbc:mariadb://localhost:3306/jdbc01",
+                    "root", "");
+            System.out.println("Vérification establishment of connection");
+            
+            return instance;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
