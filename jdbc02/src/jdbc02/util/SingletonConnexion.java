@@ -21,6 +21,7 @@ public class SingletonConnexion {
     private static Connection instance;
     
     static {
+        System.out.println("Bonjour");
         
         Properties p = new Properties();
         FileInputStream f = null;
@@ -33,13 +34,7 @@ public class SingletonConnexion {
             Logger.getLogger(SingletonConnexion.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(SingletonConnexion.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                f.close();
-            } catch (IOException ex) {
-                Logger.getLogger(SingletonConnexion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        } 
     
         try {
             Class.forName(p.getProperty("jdbc.driver.class"));
@@ -53,13 +48,18 @@ public class SingletonConnexion {
         String password = p.getProperty("jdbc.password");
         
         System.out.println(login + " " + url + " " + password);
+        System.out.println("OK");
         
-        Connection connexion = null;
-
         try {
-           connexion = DriverManager.getConnection(url, login, password);
+           instance = DriverManager.getConnection(url, login, password);
         } catch (SQLException ex) {
             Logger.getLogger(SingletonConnexion.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                f.close();
+            } catch (IOException ex) {
+                Logger.getLogger(SingletonConnexion.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
