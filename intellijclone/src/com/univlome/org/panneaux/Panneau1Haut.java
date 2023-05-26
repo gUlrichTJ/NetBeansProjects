@@ -123,7 +123,42 @@ public class Panneau1Haut extends JMenuBar {
     
             // JMenuItems for paste
             JMenuItem pasteSubMenu = new JMenuItem("Paste              Ctrl+V");
+            JMenuItem pasteFromHistory = new JMenuItem("Paste from History...    Ctrl+Shift+V");
+            JMenuItem pasteAsPlainText = new JMenuItem("Paste as Plain Text  Ctrl+Alt+Shift+V");
+            
+        JMenuItem delete = new JMenuItem("Delete");
         
+        JMenu find = new JMenu("Find");
+            
+            // JMenuItems for find
+            JMenuItem findSubMenu = new JMenuItem("Find             Ctrl+F");
+            JMenuItem replace = new JMenuItem("Replace...           Ctrl+R");
+            JMenuItem findNext = new JMenuItem("Find Next Occurence     F3");
+            JMenuItem findPrevious = new JMenuItem("Find Previous Occurence     Shift+F3");
+            JMenuItem selectAllOccurrences = new JMenuItem("Select All Occurrences      Ctrl+Alt+Shift+J");
+            JMenuItem addSelectionForNext = new JMenuItem("Add Selection For Next Occurrence       Alt+J");
+            JMenuItem unselectOccurrence = new JMenuItem("Unselect Occurrence           Alt+Shift+J");
+            JMenuItem searchInSelection = new JMenuItem("Search in Selection           Ctrl+Alt+E");
+            JMenuItem nextOccurrenceOfTheWord = new JMenuItem("Next Occurrence of the Word at Caret         Ctrl+F3");
+            JMenuItem previousOccurenceOfTheWord = new JMenuItem("Previous Occurrence of the Word at Caret  Ctrl+Shift+F3");
+            JMenuItem findInFiles = new JMenuItem("Find in Files...             Ctrl+Shift+F");
+            JMenuItem replaceInFiles = new JMenuItem("Replace in Files...       Ctrl+Shift+R");
+            JMenuItem searchStructurally = new JMenuItem("Search Structurally...");
+            JMenuItem replaceStructurally = new JMenuItem("Replace Structurally...");
+            JMenuItem evaluateJSONPath = new JMenuItem("Evaluate JSONPath Expression...");
+
+        JMenu findUsages = new JMenu("Find Usages");
+            
+            // JMenuItems for findUsages
+            JMenuItem findUsagesSubMenu = new JMenuItem("Find Usages            Alt+F7");
+            JMenuItem findUsageSettings = new JMenuItem("Find Usages Settings...   Ctrl+Alt+Shift+7");
+            JMenuItem showUsages = new JMenuItem("Show Usages           Ctrl+Alt+7");
+            JMenuItem findUsagesInFile = new JMenuItem("Find Usages in File         Ctrl+F7");
+            JMenuItem highlightUsageInFile = new JMenuItem("Hilight Usages in File      Ctrl+Shift+F7");
+            JMenuItem nextHilightedUsage = new JMenuItem("Next Hilighted Usage");
+            JMenuItem previousHilightedUsage = new JMenuItem("Previous Hilighted Usage");
+            JMenuItem recentFindUsages = new JMenuItem("Recent Find Usages");
+            
     JMenu view = new JMenu("View");
     JMenu navigate = new JMenu("Navigate");
     JMenu code = new JMenu("Code");
@@ -234,6 +269,53 @@ public class Panneau1Haut extends JMenuBar {
         
         // We add fileMenuBar to the JMenuBar
         this.add(file);
+        
+            // We add JMenuItems to edit
+            edit.add(undo);
+            edit.add(redo);
+            edit.add(cut);
+            edit.add(copy);
+            edit.add(copyPathReference);
+            
+                // We add JMenuItems to paste
+                paste.add(pasteSubMenu);
+                paste.add(pasteFromHistory);
+                paste.add(pasteAsPlainText);
+                
+            edit.add(paste);
+            edit.add(delete);
+                
+                // We add the JMenuItems to the find
+                find.add(findSubMenu);
+                find.add(replace);
+                find.add(findNext);
+                find.add(findPrevious);
+                find.add(selectAllOccurrences);
+                find.add(addSelectionForNext);
+                find.add(unselectOccurrence);
+                find.add(searchInSelection);
+                find.add(nextOccurrenceOfTheWord);
+                find.add(previousOccurenceOfTheWord);
+                find.add(findInFiles);
+                find.add(replaceInFiles);
+                find.add(searchStructurally);
+                find.add(replaceStructurally);
+                find.add(evaluateJSONPath);
+            
+            edit.add(find);
+            
+                // JMenuItems for findUsages
+                findUsages.add(findUsagesSubMenu);
+                findUsages.add(findUsageSettings);
+                findUsages.add(showUsages);
+                findUsages.add(findUsagesInFile);
+                findUsages.add(highlightUsageInFile);
+                findUsages.add(nextHilightedUsage);
+                findUsages.add(previousHilightedUsage);
+                findUsages.add(recentFindUsages);
+            
+            edit.add(findUsages);
+            
         this.add(edit);
         this.add(navigate);
         this.add(code);
