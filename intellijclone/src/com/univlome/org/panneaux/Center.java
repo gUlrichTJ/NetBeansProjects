@@ -4,6 +4,7 @@
  */
 package com.univlome.org.panneaux;
 
+import com.univlome.org.fenetres.Fenetre;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -13,8 +14,9 @@ import javax.swing.JPanel;
  */
 public class Center extends JPanel {
     
+    Fenetre fenetre;
     // We create an instance of Panneau2Haut
-   Panneau2Haut panneau2Haut = new Panneau2Haut();
+   Panneau2Haut panneau2Haut = new Panneau2Haut(fenetre);
     // Constructor
     public Center() {
         this.setLayout(new BorderLayout());

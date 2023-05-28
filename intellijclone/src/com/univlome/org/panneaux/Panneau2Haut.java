@@ -4,18 +4,23 @@
  */
 package com.univlome.org.panneaux;
 
+import com.univlome.org.fenetres.Fenetre;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 /**
@@ -38,19 +43,34 @@ public class Panneau2Haut extends JMenuBar {
     Icon singIn = new ImageIcon("/home/mgraciano/NetBeansProjects/images/signIn.png");
 // We create a JButton where we add the image
     JButton runButton;
+    
+    // We declare a Fenetre
+    Fenetre fenetre;
+    
     // Constructor
-    public Panneau2Haut() {
+    public Panneau2Haut(Fenetre fenetre) {
         /*this.setLayout(new FlowLayout(FlowLayout.LEFT));
         this.setBorder(new LineBorder(Color.WHITE, 2));
         this.setPreferredSize(new Dimension(30, 49));*/
-        
         //runButton = new JButton(runIcon);
+        this.fenetre = fenetre;
         
+        runButton = new JButton(runIcon);
         //runButton.setPreferredSize(new Dimension(19, 23));
         //this.add(runButton);
-        this.add(addImageAndString(smartPhone, "Google Pixelbook (mobile)"));
-        this.add(addImageAndString(mobilePhone, "emulator-5554"));
-        this.add(addImageAndString(runIcon, ""));
+        
+        // We add an action on the button
+        runButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                fenetre.dispose();
+            }
+        });
+        
+        this.add(addImageAndString2(smartPhone, "Google Pixelbook (mobile)"));
+        this.add(addImageAndString2(mobilePhone, "emulator-5554"));
+        //this.add(addImageAndString(runIcon, ""));
+        this.add(runButton);
         this.add(addImageAndString(debug, ""));
         this.add(addImageAndString(stop1, ""));
         this.add(addImageAndString(debug2, ""));
@@ -61,9 +81,9 @@ public class Panneau2Haut extends JMenuBar {
     }
     
     // Method to add an image beside an icon
-    public static JButton addImageAndString(Icon icon, String text) {
+    public static JPanel addImageAndString(Icon icon, String text) {
         
-        JButton panel = new JButton();
+        JPanel panel = new JPanel();
         
         // Panel's specifications
         panel.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
@@ -75,9 +95,34 @@ public class Panneau2Haut extends JMenuBar {
         
         JButton button = new JButton(icon);
         button.setPreferredSize(new Dimension(24, 24));
-        panel.add(label);
-        panel.add((Component) icon, label);
+        button.add(label);
+        
+        //button.setIconTextGap(10);
+        button.setContentAreaFilled(true);
+        panel.add(button);
+        
+        label.setVisible(true);
         
         return panel;
     }
+    
+    public static JPanel addImageAndString2(Icon icon, String text) {
+        JPanel panel = new JPanel();
+        panel.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
+        panel.setBackground(Color.WHITE);
+
+        JLabel label = new JLabel(text);
+        label.setBorder(new LineBorder(Color.CYAN, 1));
+
+        JLabel iconLabel = new JLabel(icon);
+        iconLabel.setBorder(new LineBorder(Color.CYAN, 1));
+        iconLabel.setVerticalAlignment(SwingConstants.CENTER);
+
+        panel.setLayout(new BorderLayout());
+        panel.add(iconLabel, BorderLayout.WEST);
+        panel.add(label, BorderLayout.CENTER);
+
+        return panel;
+    }
+
 }
