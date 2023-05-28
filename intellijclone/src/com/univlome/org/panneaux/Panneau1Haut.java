@@ -196,6 +196,13 @@ public class Panneau1Haut extends JMenuBar {
             JMenuItem goToMnemonic = new JMenuItem("Go to Mnemonic...       Ctrl+Shift+F11");
             
     JMenu view = new JMenu("View");
+    
+        // We add the JMenuItems to the JMenu
+        JMenu toolWindows = new JMenu("Tool Windows");
+        
+        // JMenu Items to the toolWindow
+        JMenuItem commit = new JMenuItem("Commit            Alt+0");
+    
     JMenu navigate = new JMenu("Navigate");
     JMenu code = new JMenu("Code");
     JMenu refactor = new JMenu("Refactor");
@@ -392,6 +399,14 @@ public class Panneau1Haut extends JMenuBar {
 
             
         this.add(edit);
+                
+                // Tool Window and his childre
+                toolWindows.add(commit);
+        
+            // View and it's children
+            view.add(toolWindows);
+        
+        this.add(view);
         this.add(navigate);
         this.add(code);
         this.add(refactor);
