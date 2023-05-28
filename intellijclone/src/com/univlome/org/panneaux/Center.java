@@ -16,9 +16,10 @@ public class Center extends JPanel {
     
     Fenetre fenetre;
     // We create an instance of Panneau2Haut
-   Panneau2Haut panneau2Haut = new Panneau2Haut(fenetre);
     // Constructor
-    public Center() {
+    public Center(Fenetre fenetre) {
+        Panneau2Haut panneau2Haut = new Panneau2Haut(fenetre);
+           
         this.setLayout(new BorderLayout());
         this.add(panneau2Haut, BorderLayout.NORTH);
     }

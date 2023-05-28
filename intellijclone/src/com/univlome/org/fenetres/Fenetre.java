@@ -19,7 +19,7 @@ public class Fenetre extends JFrame {
     Panneau1Haut panneau1Haut = new Panneau1Haut(this);
     
     // We create an instance of Center
-    Center center = new Center();
+    Center center = new Center(this);
     
     // Constructor
     public Fenetre() {
