@@ -414,6 +414,7 @@ public class Panneau1Haut extends JMenuBar {
         this.add(run);
         this.add(tools);
         this.add(vcs);
+        this.add(window);
         this.add(help);
     }
     
