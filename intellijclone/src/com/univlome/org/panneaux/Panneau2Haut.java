@@ -7,11 +7,7 @@ package com.univlome.org.panneaux;
 import com.univlome.org.fenetres.Fenetre;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Image;
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Icon;
@@ -47,13 +43,16 @@ public class Panneau2Haut extends JMenuBar {
     // We declare a Fenetre
     Fenetre fenetre;
     
-    // Constructor
+    // Constructor iciclis unconscientious atop unsheathed
     public Panneau2Haut(Fenetre fenetre) {
         /*this.setLayout(new FlowLayout(FlowLayout.LEFT));
         this.setBorder(new LineBorder(Color.WHITE, 2));
         this.setPreferredSize(new Dimension(30, 49));*/
         //runButton = new JButton(runIcon);
         this.fenetre = fenetre;
+        
+        this.setPreferredSize(new Dimension(20, 30));
+
         
         runButton = new JButton(runIcon);
         //runButton.setPreferredSize(new Dimension(19, 23));

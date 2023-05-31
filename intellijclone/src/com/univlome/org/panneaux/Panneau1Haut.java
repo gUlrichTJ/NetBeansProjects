@@ -200,9 +200,94 @@ public class Panneau1Haut extends JMenuBar {
         // We add the JMenuItems to the JMenu
         JMenu toolWindows = new JMenu("Tool Windows");
         
-        // JMenu Items to the toolWindow
-        JMenuItem commit = new JMenuItem("Commit            Alt+0");
-    
+            // JMenu Items to the toolWindow
+            JMenuItem commit = new JMenuItem("Commit            Alt+0");
+            JMenuItem project = new JMenuItem("Project");
+            JMenuItem bookmarksView = new JMenuItem("Bookmarks");
+            JMenuItem findView = new JMenuItem("Find            Alt+3");
+            JMenuItem runView = new JMenuItem("Run              Alt+4");
+            JMenuItem debugView = new JMenuItem("Debug          Alt+5");
+            JMenuItem problemsView = new JMenuItem("Problems            Alt+6");
+            JMenuItem structureView = new JMenuItem("Structure          Alt+7");
+            JMenuItem servicesView = new JMenuItem("Services            Alt+8");
+            JMenuItem gitView = new JMenuItem("Git          Alt+9");
+            JMenuItem emulatorView = new JMenuItem("Emulator");
+            JMenuItem profilerView = new JMenuItem("Profiler");
+            JMenuItem appInspectionView = new JMenuItem("App Inspection");
+            JMenuItem buildVariantView = new JMenuItem("Build Variant");
+            JMenuItem dartAnalysis = new JMenuItem("Dart Analysis");
+            JMenuItem deviceFileExplorerView = new JMenuItem("Device File Explorer");
+            JMenuItem deviceManagerView = new JMenuItem("Device Manager");
+            JMenuItem eventLogView = new JMenuItem("Event Log");
+            JMenuItem flutterInspectorView = new JMenuItem("Flutter Inspector");
+            JMenuItem flutterOutlineView = new JMenuItem("Flutter Outline");
+            JMenuItem flutterPerformanceView = new JMenuItem("Flutter Performance");
+            JMenuItem hierarchyView = new JMenuItem("Hierarchy");
+            JMenuItem layoutInspectorView = new JMenuItem("Layout Inspector");
+            JMenuItem logcatView = new JMenuItem("Logcat");
+          
+        JMenu appearance = new JMenu("Appearance");
+        
+            JMenuItem enterPresentationMode = new JMenuItem("Enter Presentation Mode");
+            JMenuItem enterDistractionFreeMode = new JMenuItem("Enter Distraction Free Mode");
+            JMenuItem enterFullScreen = new JMenuItem("Enter Full Screen");
+            JMenuItem enterZenMode = new JMenuItem("Enter Zen Mode");
+            JMenuItem mainMenu = new JMenuItem("Main Menu");
+            JMenuItem toolbarApp = new JMenuItem("Toolbar");
+            JMenuItem navigationBar = new JMenuItem("Navigation Bar");
+            JMenuItem toolWindowBars = new JMenuItem("Tool Windows Bars");
+            JMenuItem statusBar = new JMenuItem("Status Bar");
+            
+            JMenu statusBarWidgets = new JMenu("Status Bar Widgets");
+            
+                JMenuItem lineColumnNumber = new JMenuItem("Line:Column Number");
+                JMenuItem lineSeparatorTool = new JMenuItem("Line Separator");
+                JMenuItem fileEncodingTool = new JMenuItem("File Encoding");
+                JMenuItem powerSaveMode = new JMenuItem("Power Save Mode");
+                JMenuItem editorSelection  = new JMenuItem("Editor Selection Mode");
+                JMenuItem indentation = new JMenuItem("Indentation");
+                JMenuItem JSONSchema = new JMenuItem("JSON Schema");
+                JMenuItem gitBranch = new JMenuItem("Git Brach");
+                JMenuItem readOnlyAttribute = new JMenuItem("Read-Only Attribute");
+                JMenuItem sendFeedbackToGoogle = new JMenuItem("Send Feedback to Google");
+                JMenuItem memoryIndicator = new JMenuItem("Memory Indicator");
+            
+            JMenuItem detailsInTree = new JMenuItem("Details in Tree View");
+            JMenuItem membersInNavigation = new JMenuItem("Members in Navigation Bar");
+            
+            // We continue adding the JMenuItems to appearance
+            JMenuItem quickDefinition = new JMenuItem("Quick Definition             Ctrl+Maj+I");
+            JMenuItem showSiblings = new JMenuItem("Show Siblings");
+            JMenuItem quickTypeDefinition = new JMenuItem("Quick Type Definition");
+            JMenuItem quickDocumentation = new JMenuItem("Quick Documentation           Ctrl+Q");
+            JMenuItem parameterInfo = new JMenuItem("Parameter Info         Ctrl+P");
+            JMenuItem contextInfo = new JMenuItem("Context Info Alt+Q");
+            JMenuItem errorDescription = new JMenuItem("Error Description           Ctrl+F1");
+            JMenuItem jumpToSource = new JMenuItem("Jump to Source");
+            JMenuItem recentFiles = new JMenuItem("Recent Files         Ctrl+E");
+            JMenuItem recentChangedFiles = new JMenuItem("Recent Changed Files");
+            JMenuItem recentLocations = new JMenuItem("Recent Locations         Ctrl+Maj+E");
+            JMenuItem recentChanges = new JMenuItem("Recent Changes         Alt+Maj+C");
+            JMenuItem compareWith = new JMenuItem("Repair With...        Ctrl+D");
+            JMenuItem compareWithClipbord = new JMenuItem("Repair With Clipboard");
+            JMenuItem quickSwitchScheme = new JMenuItem("Quick Switch Scheme        Alt+'");
+            
+            JMenu activeEditor = new JMenu("Active Editor");
+                
+                JMenuItem softWrap = new JMenuItem("Soft-Wrap");
+                JMenuItem showWhiteSpaces = new JMenuItem("Show White Spaces");
+                JMenuItem showLineNumbers = new JMenuItem("Show Line Numbers");
+                JMenuItem showGutterIcons = new JMenuItem("Show Gutter Icons");
+                JMenuItem showIndentGuides = new JMenuItem("Show Indent Guides");
+                JMenuItem showImportPopups = new JMenuItem("Show Import Popups");
+            
+            JMenu bidiTextBaseDirection = new JMenu("Bidi Text Base Direction");
+                
+                JMenuItem contentBased = new JMenuItem("Content-Based");
+                JMenuItem leftToRight = new JMenuItem("Left-to-Right");
+                JMenuItem rightToLeft = new JMenuItem("Right-to-Left");
+            
+            
     JMenu navigate = new JMenu("Navigate");
     JMenu code = new JMenu("Code");
     JMenu refactor = new JMenu("Refactor");
@@ -362,6 +447,7 @@ public class Panneau1Haut extends JMenuBar {
             edit.add(findUsages);
             
             // We continue adding the JMenuItems
+            edit.add(columnSelectionMode);
             edit.add(selectAll2);
             edit.add(addCaretsToEnds);
             edit.add(extendsSelection);
@@ -402,10 +488,94 @@ public class Panneau1Haut extends JMenuBar {
                 
                 // Tool Window and his childre
                 toolWindows.add(commit);
+                toolWindows.add(project);
+                toolWindows.add(bookmarksView);
+                toolWindows.add(findView);
+                toolWindows.add(runView);
+                toolWindows.add(debugView);
+                toolWindows.add(problemsView);
+                toolWindows.add(structureView);
+                toolWindows.add(servicesView);
+                toolWindows.add(gitView);
+                toolWindows.add(emulatorView);
+                toolWindows.add(profilerView);
+                toolWindows.add(appInspectionView);
+                toolWindows.add(buildVariantView);
+                toolWindows.add(dartAnalysis);
+                toolWindows.add(deviceFileExplorerView);
+                toolWindows.add(deviceManagerView);
+                toolWindows.add(eventLogView);
+                toolWindows.add(flutterInspectorView);
+                toolWindows.add(flutterOutlineView);
+                toolWindows.add(flutterPerformanceView);
+                toolWindows.add(hierarchyView);
+                toolWindows.add(layoutInspectorView);
+                toolWindows.add(logcatView);
         
             // View and it's children
             view.add(toolWindows);
-        
+            
+                // We add the JMenuItem of appearance
+                appearance.add(enterPresentationMode);
+                appearance.add(enterDistractionFreeMode);
+                appearance.add(enterFullScreen);
+                appearance.add(enterZenMode);
+                appearance.add(mainMenu);
+                appearance.add(toolbarApp);
+                appearance.add(navigationBar);
+                appearance.add(toolWindowBars);
+                appearance.add(statusBar);
+                
+                    statusBarWidgets.add(lineColumnNumber);
+                    statusBarWidgets.add(lineSeparatorTool);
+                    statusBarWidgets.add(fileEncodingTool);
+                    statusBarWidgets.add(powerSaveMode);
+                    statusBarWidgets.add(editorSelection);
+                    statusBarWidgets.add(indentation);
+                    statusBarWidgets.add(JSONSchema);
+                    statusBarWidgets.add(gitBranch);
+                    statusBarWidgets.add(readOnlyAttribute);
+                    statusBarWidgets.add(sendFeedbackToGoogle);
+                    statusBarWidgets.add(memoryIndicator);
+
+                appearance.add(statusBarWidgets);
+                appearance.add(detailsInTree);
+                appearance.add(membersInNavigation);
+                
+            view.add(appearance);
+                
+            view.add(quickDefinition);
+            view.add(showSiblings);
+            view.add(quickTypeDefinition);
+            view.add(quickDocumentation);
+            view.add(parameterInfo);
+            view.add(contextInfo);
+            view.add(errorDescription);
+            view.add(jumpToSource);
+            view.add(recentFiles);
+            view.add(recentChangedFiles);
+            view.add(recentLocations);
+            view.add(recentChanges);
+            view.add(compareWith);
+            view.add(compareWithClipbord);
+            view.add(quickSwitchScheme);
+            
+                // Now for active editor
+                activeEditor.add(softWrap);
+                activeEditor.add(showWhiteSpaces);
+                activeEditor.add(showLineNumbers);
+                activeEditor.add(showGutterIcons);
+                activeEditor.add(showIndentGuides);
+                activeEditor.add(showImportPopups);
+
+            view.add(activeEditor);
+            
+                bidiTextBaseDirection.add(contentBased);
+                bidiTextBaseDirection.add(leftToRight);
+                bidiTextBaseDirection.add(rightToLeft);
+                
+            view.add(bidiTextBaseDirection);
+                
         this.add(view);
         this.add(navigate);
         this.add(code);
