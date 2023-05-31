@@ -160,45 +160,4 @@ public class Authentification extends JFrame {
         return deuxBoutons;
     }
     
-    // Pour le prompt
-    /*private static void addPromptSupport(JTextField textField, String promptText) {
-    textField.setText(promptText);
-    textField.setForeground(UIManager.getColor("TextField.inactiveForeground"));
-    
-    textField.addFocusListener(new FocusListener() {
-    @Override
-    public void focusGained(FocusEvent e) {
-    if (textField.getText().equals(promptText)) {
-    textField.setText("");
-    textField.setForeground(UIManager.getColor("TextField.foreground"));
-    }
-    }
-    
-    @Override
-    public void focusLost(FocusEvent e) {
-    if (textField.getText().isEmpty()) {
-    textField.setText(promptText);
-    textField.setForeground(UIManager.getColor("TextField.inactiveForeground"));
-    }
-    }
-    });
-    
-    PlainDocument document = (PlainDocument) textField.getDocument();
-    document.setDocumentFilter(new DocumentFilter() {
-    @Override
-    public void remove(FilterBypass fb, int offset, int length) throws BadLocationException {
-    if (!textField.getText().equals(promptText)) {
-    super.remove(fb, offset, length);
-    }
-    }
-    
-    @Override
-    public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
-    if (!textField.getText().equals(promptText)) {
-    super.replace(fb, offset, length, text, attrs);
-    }
-    }
-    });
-    }*/
-    
 }
