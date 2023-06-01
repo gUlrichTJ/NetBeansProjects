@@ -5,12 +5,17 @@
 package jdbc02.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Principal extends JFrame {
     
     // Nous déclarons le haut
     Haut haut;
+    JPanel panelDeGauche;
     // Nous déclarons gauche
     Gauche gauche;
     // Constructor
@@ -21,11 +26,14 @@ public class Principal extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         
+        //this.setLayout(new BorderLayout());
         // Nous instancions haut et nous l'ajoutons au panel princiapal
         haut = new Haut();
         this.add(haut, BorderLayout.NORTH);
         
-        gauche = new Gauche();
+        gauche = new Gauche();  // Après nous allons mettre gauche et centre dans un JSplitPane
+        
+        //this.add(panelDeGauche, BorderLayout.WEST);
         this.add(gauche, BorderLayout.WEST);
         
         // Visibility
