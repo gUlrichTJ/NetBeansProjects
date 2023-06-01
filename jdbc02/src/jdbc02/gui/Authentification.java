@@ -46,10 +46,6 @@ public class Authentification extends JFrame {
         panelCentre = centreAuth();
         this.add(panelCentre, BorderLayout.CENTER);
         
-        // Nous ajoutons le bas
-        panelBas =  boutonsDuBas();
-        this.add(panelBas, BorderLayout.SOUTH);
-        
         this.setVisible(true);
     }
     
@@ -71,7 +67,7 @@ public class Authentification extends JFrame {
     public JPanel centreAuth() {
         
         JPanel panelCentreAuth = new JPanel();
-        panelCentreAuth.setBackground(Color.cyan);
+        panelCentreAuth.setBackground(Color.lightGray);
         
         // Pour le email
         JLabel labelEmail = new JLabel("Entrez votre mail");
@@ -79,7 +75,7 @@ public class Authentification extends JFrame {
         
         // Nous ajoutons le label à un panel
         JPanel panelTextEmail = new JPanel();
-        panelTextEmail.setBackground(Color.CYAN);
+        panelTextEmail.setBackground(Color.lightGray);
         panelTextEmail.add(labelEmail);
         
         // La zone de saisie de l'email
@@ -99,18 +95,18 @@ public class Authentification extends JFrame {
         JPanel passwordZone = new JPanel();
 
         passwordZone.add(labelZonePassword);
-        passwordZone.setBackground(Color.CYAN);
+        passwordZone.setBackground(Color.lightGray);
         
         passwordCentreAuth = new JPasswordField(20);
         passwordCentreAuth.setPreferredSize(new Dimension(30, 30));
             
         // Nous créons un panel pour la zone de saisie de mot de passe
         JPanel zoneDeSaisiePassword = new JPanel();
-        zoneDeSaisiePassword.setBackground(Color.CYAN);
+        zoneDeSaisiePassword.setBackground(Color.lightGray);
         zoneDeSaisiePassword.add(passwordCentreAuth);
         
         JPanel panelPassword = new JPanel();
-        //panelPassword.setBackground(Color.CYAN);
+        //panelPassword.setBackground(Color.lightGray);
         panelPassword.setLayout(new GridLayout(2, 1));
         
         // Nous ajoutons la zone de saisie et le label au panelPasswor
@@ -119,6 +115,11 @@ public class Authentification extends JFrame {
         
         panelCentreAuth.add(panelEmail);
         panelCentreAuth.add(panelPassword);
+        
+        // Nous ajoutons le bas du centre
+        // Nous ajoutons le bas
+        panelBas =  boutonsDuBas();
+        panelCentreAuth.add(panelBas, BorderLayout.SOUTH);
         
         return panelCentreAuth;
     }
@@ -136,13 +137,13 @@ public class Authentification extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
                     String recupererEmail = emailCentreAuth.getText();
-                    char[] recupererPassword = passwordCentreAuth.getPassword();
+                    String recupererPassword = passwordCentreAuth.getText();
                     
                     // Nous verifions 
-                    if (recupererEmail.equals("gracianomathey@gmail.com")) {
-                        if (recupererPassword.equals("1234")) {
-                            System.out.println("Connexion reussie");
-                        }
+                    if (recupererEmail.equals("gracianomathey@gmail.com") && recupererPassword.equals("1234")) {
+                        System.out.println("Connexion reussie");
+                        Authentification.this.dispose();
+                        Principal principal = new Principal();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Email ou mot de passe invalid");
                     }
@@ -151,6 +152,15 @@ public class Authentification extends JFrame {
             });
         
         JButton quitter = new JButton("Quitter");
+        
+        // Nous ajoutons l'action sur le bouton quitter
+        quitter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Authentification.this.dispose();
+            }
+        });
+        
         
         // Nous ajoutons les deux boutons au panel deuxBoutons
         deuxBoutons.add(quitter, new FlowLayout(FlowLayout.LEFT));
