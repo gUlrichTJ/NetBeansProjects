@@ -105,6 +105,13 @@ public class Gauche extends JPanel {
         // Nous ajoutons le bouton de itineraire
         add(itineraire);
         
+        // Nous mettons une action sur le bouton paramètre
+        parametres.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Paramètres parametreA = new Paramètres();
+            }
+        });
         // Nous ajoutons paramètre
         add(parametres);
         
