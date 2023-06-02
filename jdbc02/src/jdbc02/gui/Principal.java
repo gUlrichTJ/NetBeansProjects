@@ -25,7 +25,7 @@ public class Principal extends JFrame {
     public Principal() {
         
         super("Fenetre Principale");
-        this.setSize(900, 500);
+        this.setSize(1000, 600);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         
