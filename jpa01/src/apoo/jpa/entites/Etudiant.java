@@ -9,44 +9,58 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 
 /**
  *
  * @author mgraciano
  */
+
+@Entity
 public class Etudiant implements Serializable {
     
-    private int id;
+    @Id     // Ceci est la clé primaire
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    
+    @Column(name = "numero_carte", length=20)
     private String numeroDeCarte;
     private String nom;
     private String prenom;
     private LocalDate dateDaissance;
     
-    private List<Parcours> parcourses = new ArrayList<>();
+    @Transient
+    private List<Parcours> parcourses;
     
     // Default constructor
     public Etudiant() {
+        this.parcourses = new ArrayList<>();
     }
     
     // Constructor with parameters
-    public Etudiant(int id, String numeroDeCarte, String nom, 
-            String prenom, LocalDate dateNaissance) {
+
+    public Etudiant(Integer id, String numeroDeCarte, String nom, String prenom, LocalDate dateDaissance, List<Parcours> parcourses) {
         this.id = id;
         this.numeroDeCarte = numeroDeCarte;
         this.nom = nom;
         this.prenom = prenom;
-        this.dateDaissance = dateNaissance;
+        this.dateDaissance = dateDaissance;
+        this.parcourses = parcourses;
     }
-    
-    // Constructor with parameters
-    
-    
-    // Getters et setters
-    public int getId() {
+   
+
+    public Integer getId() {
         return id;
     }
-    
-    public void setId(int id) {
+
+    // Getters et setters
+    public void setId(Integer id) {   
         this.id = id;
     }
 
