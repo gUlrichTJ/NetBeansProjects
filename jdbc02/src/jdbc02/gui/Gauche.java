@@ -5,6 +5,7 @@
 package jdbc02.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,9 +38,28 @@ public class Gauche extends JPanel {
         // les uns en dessous des autres et un glue pour laisser de 
         // l'espace vide en bas
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setBackground(Color.WHITE);
         
         centre.setLayout(new BorderLayout());
         
+        // Nous mettons une action sur le bouton accueil
+            accueil.addActionListener(new ActionListener() {
+               @Override
+               public void actionPerformed(ActionEvent e) {
+                   // Nous enlevons tout ce qu'il y avait à l'intérieur
+                   centre.removeAll();
+                   
+                   // Nous créons un objet de type Accueil
+                   Accueil accueilA = new Accueil();
+                   
+                   // Nous ajoutons accueilA au centre
+                   centre.add(accueilA, BorderLayout.CENTER);
+                   
+                   // Nous ajoutons centre au centre de principal
+                   principal.getContentPane().add(centre, BorderLayout.CENTER);
+                   principal.revalidate();
+               }
+            });
         add(accueil);
         // Nous ajoutons le bouton utilisateur
         
@@ -109,7 +129,7 @@ public class Gauche extends JPanel {
         parametres.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Paramètres parametreA = new Paramètres();
+                Parametres parametreA = new Parametres();
             }
         });
         // Nous ajoutons paramètre

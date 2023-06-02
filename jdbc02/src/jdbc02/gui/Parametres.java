@@ -6,6 +6,10 @@ package jdbc02.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -17,10 +21,10 @@ import javax.swing.border.LineBorder;
  *
  * @author mgraciano
  */
-public class Paramètres extends JFrame {
+public class Parametres extends JFrame {
     
     // Constructor
-    public Paramètres() {
+    public Parametres() {
         super("Pramètres");
         setSize(850, 550);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -30,6 +34,10 @@ public class Paramètres extends JFrame {
         setJMenuBar(menuBarGauche);
         
         add(menuBarGauche, BorderLayout.NORTH);
+        
+        JPanel troisBtn = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        troisBtn = troisBoutons();
+        add(troisBtn, BorderLayout.SOUTH);
         
         setVisible(true);
     }
@@ -104,5 +112,49 @@ public class Paramètres extends JFrame {
             menuBar.add(langagesFramework);
                 
         return menuBar;
+    }
+    
+    // Les trois boutons ok, cancel, apply
+    public JPanel troisBoutons() {
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        
+        // Les trois boutons
+        
+        JButton ok = new JButton("Ok");
+        ok.setBackground(Color.CYAN);
+        // Nous ajoutons une action sur le boutons ok
+        ok.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Parametres.this.dispose();
+            }
+        });
+        
+        panel.add(ok);
+        
+        JButton cancel = new JButton("Anuler");
+        cancel.setBackground(Color.red);
+        // Nous ajoutons une action sur le boutons ok
+        cancel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Parametres.this.dispose();
+            }
+        });
+        panel.add(cancel);
+        
+        JButton apply = new JButton("Appliquer");
+        apply.setBackground(Color.LIGHT_GRAY);
+        // Nous ajoutons une action sur le boutons ok
+        apply.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.out.println("Correct");
+            }
+        });
+        panel.add(apply);
+        
+        return panel;
     }
 }
