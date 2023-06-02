@@ -29,7 +29,7 @@ public class Paramètres extends JFrame {
         JMenuBar menuBarGauche = gauche();
         setJMenuBar(menuBarGauche);
         
-        add(menuBarGauche, BorderLayout.WEST);
+        add(menuBarGauche, BorderLayout.NORTH);
         
         setVisible(true);
     }
@@ -51,8 +51,58 @@ public class Paramètres extends JFrame {
                     apparenceEtComportement.add(systemSettings);
                     apparenceEtComportement.add(couleurs);
                     
-             menuBar.add(apparenceEtComportement);
-        
+            menuBar.add(apparenceEtComportement);
+            
+            JMenu keyMap = new JMenu("Key Map");
+            menuBar.add(keyMap);
+            
+                JMenu editeur = new JMenu("Editeur");
+                    JMenuItem general = new JMenuItem("Général");
+                    JMenuItem codeEditing = new JMenuItem("Code Editing");
+                    JMenuItem font = new JMenuItem("Font");
+                    JMenuItem colorScheme = new JMenuItem("Color Scheme");
+                    JMenuItem colorStyle = new JMenuItem("Color Sytle");
+                    
+                // Nous ajoutons
+                editeur.add(general);
+                editeur.add(codeEditing);
+                editeur.add(font);
+                editeur.add(colorScheme);
+                editeur.add(colorStyle);
+                // Nous ajoutons menuBar à l'éditeur
+            menuBar.add(editeur);
+            
+                JMenu plugin = new JMenu("Plugin");
+            menuBar.add(plugin);
+                
+                JMenu versionControl = new JMenu("Version Control");
+                    JMenuItem changeList = new JMenuItem("Change List");
+                    JMenuItem commit = new JMenuItem("Commit");
+                    JMenuItem confirmation = new JMenuItem("Confirmation");
+                    JMenuItem directoryMapping = new JMenuItem("Directory Mapping");
+                    JMenuItem fileStatusColor = new JMenuItem("File Status Color");
+                    JMenuItem issueNavigation = new JMenuItem("Issue Navigation");
+                    JMenuItem shelf = new JMenuItem("Shelf");
+                    JMenuItem git = new JMenuItem("Git");
+                    
+                // Nous ajoutons
+                versionControl.add(changeList);
+                versionControl.add(commit);
+                versionControl.add(confirmation);
+                versionControl.add(directoryMapping);
+                versionControl.add(fileStatusColor);
+                versionControl.add(issueNavigation);
+                versionControl.add(shelf);
+                versionControl.add(git);
+                
+            menuBar.add(versionControl);
+                
+                JMenu buildExecutionDep = new JMenu("Build, Execution, Deployement");
+            menuBar.add(buildExecutionDep);
+            
+                JMenu langagesFramework = new JMenu("Langages et Frameworks");
+            menuBar.add(langagesFramework);
+                
         return menuBar;
     }
 }
