@@ -18,11 +18,14 @@ public class Principal extends JFrame {
     JPanel panelDeGauche;
     // Nous déclarons gauche
     Gauche gauche;
+    // Nous ajoutons le bas
+    Bas bas;
+    
     // Constructor
     public Principal() {
         
         super("Fenetre Principale");
-        this.setSize(600, 500);
+        this.setSize(900, 500);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         
@@ -31,10 +34,14 @@ public class Principal extends JFrame {
         haut = new Haut();
         this.add(haut, BorderLayout.NORTH);
         
-        gauche = new Gauche();  // Après nous allons mettre gauche et centre dans un JSplitPane
+        gauche = new Gauche(this);  // Après nous allons mettre gauche et centre dans un JSplitPane
         
         //this.add(panelDeGauche, BorderLayout.WEST);
         this.add(gauche, BorderLayout.WEST);
+        
+        // Nous instancions bas
+        bas = new Bas();
+        this.add(bas, BorderLayout.SOUTH);
         
         // Visibility
         this.setVisible(true);

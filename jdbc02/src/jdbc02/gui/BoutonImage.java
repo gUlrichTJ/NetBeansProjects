@@ -18,10 +18,10 @@ public class BoutonImage extends JButton {
         ImageIcon icon = new ImageIcon(pathIcon);
         this.setIcon(icon);
         this.setText(texte);
-        this.setFont(new Font("Arial", Font.BOLD, 14));
+        this.setFont(new Font("Serif", Font.PLAIN, 13));
         this.setForeground(Color.black);
         this.setVisible(true);
         this.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));    // Elève la bordure
-        this.setBackground(Color.cyan);
+        this.setBackground(Color.white);
   }
 }
