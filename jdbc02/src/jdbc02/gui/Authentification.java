@@ -51,7 +51,26 @@ public class Authentification extends JFrame {
     
     // Nous créons un constructeur pour quelque chose de plus joli
     public Authentification(int joli) {
+        setTitle("Authentification page");
+        setSize(new Dimension(500, 300));
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
         
+        setLayout(new BorderLayout());
+        
+        // Nous allons mettre l'image comme font de background
+        ImageIcon iconDeDerriere = new ImageIcon("/home/mgraciano/NetBeansProjects/images/busAuth.jpg");
+        JLabel label = new JLabel(iconDeDerriere);
+        label.setIcon(iconDeDerriere);
+        
+        // Nous ajoutons l'image au contentPane
+        getContentPane().add(label);
+        
+        JPanel panelCentre = centreAuth();
+        add(panelCentre);
+        
+        setVisible(true);
     }
     
     // Nous créons une méthode qui sera à gauche et qui contiendra l'image
