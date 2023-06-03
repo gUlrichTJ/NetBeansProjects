@@ -33,8 +33,14 @@ public class Etudiant implements Serializable {
     
     @Column(name = "numero_carte", length=20)
     private String numeroDeCarte;
+    
+    @Column(name = "nom", length = 20, nullable = false)
     private String nom;
+    
+    @Column(name = "prenom", length = 20, nullable = false)
     private String prenom;
+    
+    @Column(name = "date_naissance", length = 20)
     private LocalDate dateDaissance;
     
     @Transient
@@ -44,6 +50,16 @@ public class Etudiant implements Serializable {
     public Etudiant() {
         this.parcourses = new ArrayList<>();
     }
+    
+    // Constructor without id and parcours
+
+    public Etudiant(String numeroDeCarte, String nom, String prenom, LocalDate dateDaissance) {
+        this.numeroDeCarte = numeroDeCarte;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateDaissance = dateDaissance;
+    }
+    
     
     // Constructor with parameters
 
@@ -145,5 +161,14 @@ public class Etudiant implements Serializable {
         }
         return Objects.equals(this.dateDaissance, other.dateDaissance);
     }
+
+    @Override
+    public String toString() {
+        return "Etudiant{" + "id=" + id + ", numeroDeCarte=" + numeroDeCarte + 
+                ", nom=" + nom + ", prenom=" + prenom + ", dateDaissance=" 
+                + dateDaissance + ", parcourses=" + parcourses + '}';
+    }
+    
+    
     
 }
