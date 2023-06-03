@@ -49,6 +49,11 @@ public class Authentification extends JFrame {
         this.setVisible(true);
     }
     
+    // Nous créons un constructeur pour quelque chose de plus joli
+    public Authentification(int joli) {
+        
+    }
+    
     // Nous créons une méthode qui sera à gauche et qui contiendra l'image
     public JPanel gaucheAuth() {
         JPanel panelAuth = new JPanel();
@@ -145,7 +150,7 @@ public class Authentification extends JFrame {
                         Authentification.this.dispose();
                         Principal principal = new Principal();
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "Email ou mot de passe invalid");
+                        JOptionPane.showMessageDialog(rootPane, "Email ou mot de passe invalide");
                     }
 
                 }
