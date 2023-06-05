@@ -290,13 +290,13 @@ public class Panneau1Haut extends JMenuBar {
     JMenu navigate = new JMenu("Navigate");
     
         // The JMenuItems for navigate
-        JMenuItem backNavigate = new JMenuItem("Back            Alt+Maj+Gauche");
-        JMenuItem forwardNavigate = new JMenuItem("Forward          Alt+Maj+Droite");
+        JMenuItem backNavigate = new JMenuItem("Back                      Alt+Maj+Gauche");
+        JMenuItem forwardNavigate = new JMenuItem("Forward                Alt+Maj+Droite");
         JMenuItem searchEverywhere = new JMenuItem("Search Everywhere");
-        JMenuItem classNavigate = new JMenuItem("Class...          Ctrl+N");
-        JMenuItem fileNavigate = new JMenuItem("File...          Ctrl+Maj+N");
-        JMenuItem symbolNavigate = new JMenuItem("Symbol...             Ctrl+Maj+N");
-        JMenuItem lineColumnNavigate = new JMenuItem("Line Column...        Ctrl+G");
+        JMenuItem classNavigate = new JMenuItem("Class...                   Ctrl+N");
+        JMenuItem fileNavigate = new JMenuItem("File...                     Ctrl+Maj+N");
+        JMenuItem symbolNavigate = new JMenuItem("Symbol...                      Ctrl+Maj+N");
+        JMenuItem lineColumnNavigate = new JMenuItem("Line Column...                Ctrl+G");
         JMenuItem nextHilightedErrorNavigate = new JMenuItem("Next Hilighted Error      F2");
         JMenuItem previousHilightedErrorNavigate = new JMenuItem("Previous Hilighted Error  Maj+F2");
         JMenuItem nextEmmetEditPoint = new JMenuItem("Next Emmet Edit Point         Alt+Maj+]");
@@ -305,6 +305,16 @@ public class Panneau1Haut extends JMenuBar {
         JMenuItem nextEditLocation = new JMenuItem("Next Edit Location");
         
         JMenu navigateInFile = new JMenu("Navigate in File");
+        
+            // The JMenuItems for navigate in file
+            JMenuItem nextMethodNav = new JMenuItem("Next Method                Alt+Bas");
+            JMenuItem previousMethodNav = new JMenuItem("Previous Method            Alt+Haut");
+            JMenuItem moveCaretToMatchingBrace = new JMenuItem("Move Caret o Macthing Brace     Ctrl+Maj+M");
+            JMenuItem nextLiveTemplateParameter = new JMenuItem("Next Live Template Parameter");
+            JMenuItem previousLiveTemplateParameter = new JMenuItem("Previous Live Template Parameter");
+            JMenuItem customFolding = new JMenuItem("Custom Folding...            Ctrl+Alt+.");
+            JMenuItem nextChangeNav = new JMenuItem("Next Change                Ctrl+Alt+Maj+Bas");
+            JMenuItem previousChangeNav = new JMenuItem("Previous Change            Ctrl+Alt+Maj+Haut");
         
         JMenuItem selectIn = new JMenuItem("Select In...        Alt+Maj+1");
         JMenuItem jumpToNavigationBar = new JMenuItem("Jump to Navigation Bar       Alt+Origine");
@@ -324,6 +334,32 @@ public class Panneau1Haut extends JMenuBar {
         
         
     JMenu code = new JMenu("Code");
+    
+        // The JMenuItems for code
+        JMenuItem overrideMethods = new JMenuItem("Override Methods...      Ctrl+O");
+        JMenuItem implementMethods = new JMenuItem("Implement Methods...        Ctrl+I");
+        JMenuItem delegateMethods = new JMenuItem("Delegate Methods...");
+        JMenuItem generateCode = new JMenuItem("Code Completion");
+       
+        JMenu codeCompletion = new JMenu("Code Completion");
+            
+            JMenuItem basicCodeCompletion = new JMenuItem("Basic        Ctrl+Espace");
+            JMenuItem typeMatching = new JMenuItem("Type-Matching       Ctrl+Maj+Espace");
+            JMenuItem completeCurrentStatement = new JMenuItem("Complete Current Statement      Ctrl+Maj+Entrée");
+            JMenuItem cyclicExpandWord = new JMenuItem("Cyclic Expand Word      Alt+/");
+            JMenuItem cyclicExpandWordBackward = new JMenuItem("Cyclic Expand Word (Backward)   Alt+Maj+/");
+            
+        JMenuItem inspectCode = new JMenuItem("Inspect Code...");
+        JMenuItem codeCleanup = new JMenuItem("Code Cleanup...");
+        JMenuItem analyzeCode = new JMenuItem("Analyze Code");
+        JMenuItem analyzeStackTrace = new JMenuItem("Analyze Stack Trace or Thread Dump...");
+        JMenuItem insertLiveTemplate = new JMenuItem("Insert Live Template...       Ctrl+J");
+        JMenuItem saveAsLiveTemplate = new JMenuItem("Save as Live Template...");
+        JMenuItem surroundWith = new JMenuItem("Surround With...        Ctrl+Alt+T");
+        JMenuItem unwrapRemove = new JMenuItem("Unwrap/Remove...        Ctrl+Maj+Supprimer");
+        
+        JMenu foldingCode = new JMenu("Folding");
+        
     JMenu refactor = new JMenu("Refactor");
     JMenu build = new JMenu("Build");
     JMenu run = new JMenu("Run");
@@ -626,6 +662,17 @@ public class Panneau1Haut extends JMenuBar {
             navigate.add(previousEmmetEditPoint);
             navigate.add(lastEditLocation);
             navigate.add(nextEditLocation);
+            
+                // We add the JMenuItems to the navigateInFile
+                navigateInFile.add(nextMethodNav);
+                navigateInFile.add(previousMethodNav);
+                navigateInFile.add(moveCaretToMatchingBrace);
+                navigateInFile.add(nextLiveTemplateParameter);
+                navigateInFile.add(previousLiveTemplateParameter);
+                navigateInFile.add(customFolding);
+                navigateInFile.add(nextChangeNav);
+                navigateInFile.add(previousChangeNav);
+            
             navigate.add(navigateInFile);
             navigate.add(selectIn);
             navigate.add(jumpToNavigationBar);
