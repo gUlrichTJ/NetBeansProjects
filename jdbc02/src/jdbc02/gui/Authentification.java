@@ -37,7 +37,7 @@ public class Authentification extends JFrame {
         this.setSize(400, 400);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        
+        this.setResizable(false);
         // Nous ajoutons le panel de gauche
         panelGauche = gaucheAuth();
         this.add(panelGauche, BorderLayout.WEST);

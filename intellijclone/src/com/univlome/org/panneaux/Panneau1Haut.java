@@ -287,8 +287,42 @@ public class Panneau1Haut extends JMenuBar {
                 JMenuItem leftToRight = new JMenuItem("Left-to-Right");
                 JMenuItem rightToLeft = new JMenuItem("Right-to-Left");
             
-            
     JMenu navigate = new JMenu("Navigate");
+    
+        // The JMenuItems for navigate
+        JMenuItem backNavigate = new JMenuItem("Back            Alt+Maj+Gauche");
+        JMenuItem forwardNavigate = new JMenuItem("Forward          Alt+Maj+Droite");
+        JMenuItem searchEverywhere = new JMenuItem("Search Everywhere");
+        JMenuItem classNavigate = new JMenuItem("Class...          Ctrl+N");
+        JMenuItem fileNavigate = new JMenuItem("File...          Ctrl+Maj+N");
+        JMenuItem symbolNavigate = new JMenuItem("Symbol...             Ctrl+Maj+N");
+        JMenuItem lineColumnNavigate = new JMenuItem("Line Column...        Ctrl+G");
+        JMenuItem nextHilightedErrorNavigate = new JMenuItem("Next Hilighted Error      F2");
+        JMenuItem previousHilightedErrorNavigate = new JMenuItem("Previous Hilighted Error  Maj+F2");
+        JMenuItem nextEmmetEditPoint = new JMenuItem("Next Emmet Edit Point         Alt+Maj+]");
+        JMenuItem previousEmmetEditPoint = new JMenuItem("Previous Emmet Edit Point     Alt+Maj");
+        JMenuItem lastEditLocation = new JMenuItem("Last Edit Location  Ctrl+Maj+Retour arrière");
+        JMenuItem nextEditLocation = new JMenuItem("Next Edit Location");
+        
+        JMenu navigateInFile = new JMenu("Navigate in File");
+        
+        JMenuItem selectIn = new JMenuItem("Select In...        Alt+Maj+1");
+        JMenuItem jumpToNavigationBar = new JMenuItem("Jump to Navigation Bar       Alt+Origine");
+        JMenuItem declarationOrUsages = new JMenuItem("Declaration or Usages        Ctrl+B");
+        JMenuItem implementations = new JMenuItem("Implementation(s)            Ctrl+Alt+B");
+        JMenuItem typeDeclaration = new JMenuItem("Type Declaration             Ctrl+Maj+B");
+        JMenuItem superMethod = new JMenuItem("Super Method                 Ctrl+U");
+        JMenuItem testNavigate = new JMenuItem("Test                Ctrl+Maj+T");
+        JMenuItem RelatedSymbol = new JMenuItem("Related Symbol...          Ctrl+Alt+Origine");
+        JMenuItem headerSourceNavigate = new JMenuItem("Header/Source               F10");
+        JMenuItem fileStructure = new JMenuItem("File Strucuture              Ctrl+F12");
+        JMenuItem filePathNavigate = new JMenuItem("Imports Hierarchy           Alt+Maj+H");
+        JMenuItem importHierarchy = new JMenuItem("Type Hierarchy               Ctrl+H");
+        JMenuItem typeHierachy = new JMenuItem("Tyep Hierarchy              Ctrl+H");
+        JMenuItem methodHierarchy = new JMenuItem("Method Hierarchy             Ctrl+Maj+H");
+        JMenuItem callHierarchy = new JMenuItem("Call Hierarchy                 Ctrl+Alt+H");
+        
+        
     JMenu code = new JMenu("Code");
     JMenu refactor = new JMenu("Refactor");
     JMenu build = new JMenu("Build");
@@ -577,6 +611,38 @@ public class Panneau1Haut extends JMenuBar {
             view.add(bidiTextBaseDirection);
                 
         this.add(view);
+        
+            // Nous ajoutons les JMenuItems pour navigate
+            navigate.add(backNavigate);
+            navigate.add(forwardNavigate);
+            navigate.add(searchEverywhere);
+            navigate.add(classNavigate);
+            navigate.add(fileNavigate);
+            navigate.add(symbolNavigate);
+            navigate.add(lineColumnNavigate);
+            navigate.add(nextHilightedErrorNavigate);
+            navigate.add(previousHilightedErrorNavigate);
+            navigate.add(nextEmmetEditPoint);
+            navigate.add(previousEmmetEditPoint);
+            navigate.add(lastEditLocation);
+            navigate.add(nextEditLocation);
+            navigate.add(navigateInFile);
+            navigate.add(selectIn);
+            navigate.add(jumpToNavigationBar);
+            navigate.add(declarationOrUsages);
+            navigate.add(implementations);
+            navigate.add(typeDeclaration);
+            navigate.add(superMethod);
+            navigate.add(testNavigate);
+            navigate.add(RelatedSymbol);
+            navigate.add(headerSourceNavigate);
+            navigate.add(fileStructure);
+            navigate.add(filePathNavigate);
+            navigate.add(importHierarchy);
+            navigate.add(typeHierachy);
+            navigate.add(methodHierarchy);
+            navigate.add(callHierarchy);
+        
         this.add(navigate);
         this.add(code);
         this.add(refactor);
