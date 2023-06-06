@@ -339,7 +339,7 @@ public class Panneau1Haut extends JMenuBar {
         JMenuItem overrideMethods = new JMenuItem("Override Methods...      Ctrl+O");
         JMenuItem implementMethods = new JMenuItem("Implement Methods...        Ctrl+I");
         JMenuItem delegateMethods = new JMenuItem("Delegate Methods...");
-        JMenuItem generateCode = new JMenuItem("Code Completion");
+        JMenuItem generateCode = new JMenuItem("Generate...");
        
         JMenu codeCompletion = new JMenu("Code Completion");
             
@@ -351,7 +351,22 @@ public class Panneau1Haut extends JMenuBar {
             
         JMenuItem inspectCode = new JMenuItem("Inspect Code...");
         JMenuItem codeCleanup = new JMenuItem("Code Cleanup...");
-        JMenuItem analyzeCode = new JMenuItem("Analyze Code");
+        
+        JMenu analyzeCode = new JMenu("Analyze Code");
+            
+            // The JMenuItems for analyseCode
+            JMenuItem silentCodeCleanup = new JMenuItem("Silent Code Cleanup");
+            JMenuItem runInspectionByName = new JMenuItem("Run Inspection by Name...        Ctrl+Alt+Maj+I");
+            JMenuItem configureCurrentFileAnalysis = new JMenuItem("Configure Current File Analysis...      Ctrl+Alt+Maj+H");
+            JMenuItem viewOfflineInspectionResults = new JMenuItem("View Offline Inspection Results...");
+            JMenuItem inferNullity = new JMenuItem("Infer Nullity...");
+            JMenuItem dependanciesAnalyseCode = new JMenuItem("Dependancies...");
+            JMenuItem backwardDependancies = new JMenuItem("Backward Dependancies...");
+            JMenuItem moduleDependancies = new JMenuItem("Module Dependancies...");
+            JMenuItem cyclicDependancies = new JMenuItem("Cyclic Dependancies...");
+            JMenuItem dataFlowToHere = new JMenuItem("Data Flow to Here...");
+            JMenuItem dataFlowFromHere = new JMenuItem("Data Flow from Here...");
+        
         JMenuItem analyzeStackTrace = new JMenuItem("Analyze Stack Trace or Thread Dump...");
         JMenuItem insertLiveTemplate = new JMenuItem("Insert Live Template...       Ctrl+J");
         JMenuItem saveAsLiveTemplate = new JMenuItem("Save as Live Template...");
@@ -359,6 +374,49 @@ public class Panneau1Haut extends JMenuBar {
         JMenuItem unwrapRemove = new JMenuItem("Unwrap/Remove...        Ctrl+Maj+Supprimer");
         
         JMenu foldingCode = new JMenu("Folding");
+            
+            // JMenuItems for folding
+            JMenuItem expandCode = new JMenuItem("Expand        Ctrl+Pané numérique +");
+            JMenuItem expandRecursively = new JMenuItem("Expand Recursively         Ctrl+Alt+Pavé numérique +");
+            JMenuItem expandAll = new JMenuItem("Expand All             Ctrl+Maj+Pavé numérique +");
+            JMenuItem collapseCode = new JMenuItem("Collapse            Ctrl+Pané numérique");
+            JMenuItem collapseRecursively = new JMenuItem("Collapse Recursively Ctrl+Alt+Pavé numérique -");
+            JMenuItem collapseAll = new JMenuItem("Collapse All         Ctrl+Maj+Pavé numérique -");
+        
+            JMenu expandToLevel = new JMenu("Expand to Level");
+                
+                JMenuItem unCode = new JMenuItem("1     Ctrl+Pavé numérique *,1");
+                JMenuItem deuxCode = new JMenuItem("2     Ctrl+Pavé numérique *,2");
+                JMenuItem troisCode = new JMenuItem("3     Ctrl+Pavé numérique *,3");
+                JMenuItem quatreCode = new JMenuItem("4     Ctrl+Pavé numérique *,4");
+                JMenuItem cinqCode = new JMenuItem("5     Ctrl+Pavé numérique *,5");
+            
+            JMenu expandAllToLevel = new JMenu("Expand All to Level");
+            
+                JMenuItem unExpandAll = new JMenuItem("1        Ctrl+Maj+Pavé numérique*,1");
+                JMenuItem deuxExpandAll = new JMenuItem("2        Ctrl+Maj+Pavé numérique*,2");
+                JMenuItem troisExpandAll = new JMenuItem("3        Ctrl+Maj+Pavé numérique*,3");
+                JMenuItem quatreExpandAll = new JMenuItem("4        Ctrl+Maj+Pavé numérique*,4");
+                JMenuItem cinqExpandAll = new JMenuItem("5        Ctrl+Maj+Pavé numérique*,5");
+            
+            JMenuItem expandDocComments = new JMenuItem("Expand Doc Comments");
+            JMenuItem collapseDocComments = new JMenuItem("Collapse Doc comments");
+            JMenuItem foldSelectionRemove = new JMenuItem("Flod Selection/Remove region         Ctrl+.");
+            JMenuItem foldCodeBlock = new JMenuItem("Fold Code Block        Ctrl+Maj+.");
+            
+        JMenuItem commentWithLineComment = new JMenuItem("Comment With Line Comment         Ctrl+/");
+        JMenuItem commentWithBlockComment = new JMenuItem("Comment with Block Comment       Ctrl+Maj+/");
+        JMenuItem reformatFile = new JMenuItem("Reformat File...            Ctrl+Alt+Maj+L");
+        JMenuItem autoIndentLines = new JMenuItem("Auto-Indent Lines            Ctrl+Alt+I");
+        JMenuItem rearrangeCode = new JMenuItem("Rearrange Code");
+        JMenuItem moveStatementDown = new JMenuItem("Move Statement Down        Ctrl+Maj+Bas");
+        JMenuItem moveStatementUp = new JMenuItem("Move Statement Haut          Ctrl+Maj+Haut");
+        JMenuItem moveStatementLeft = new JMenuItem("Move Statement Left          Ctrl+Alt+Maj+Gauche");
+        JMenuItem moveStatementRight = new JMenuItem("Move Statement Haut          Ctrl+Alt+Maj+Droite");
+        JMenuItem moveLineDown = new JMenuItem("Move Line Down");
+        JMenuItem moveLineUp = new JMenuItem("Move Line Up");
+        JMenuItem updateCopyRight = new JMenuItem("Update Copyright...");
+        JMenuItem generateModuleInfoDescriptors = new JMenuItem("Generate module-info Descriptors");
         
     JMenu refactor = new JMenu("Refactor");
     JMenu build = new JMenu("Build");
@@ -691,6 +749,74 @@ public class Panneau1Haut extends JMenuBar {
             navigate.add(callHierarchy);
         
         this.add(navigate);
+        
+            // We add the JMenuItems for code
+            code.add(overrideMethods);
+            code.add(implementMethods);
+            code.add(delegateMethods);
+            code.add(generateCode);
+            
+                // We add the JMenuItems for the codeCompletion
+                codeCompletion.add(basicCodeCompletion);
+                codeCompletion.add(typeMatching);
+                codeCompletion.add(completeCurrentStatement);
+                codeCompletion.add(cyclicExpandWord);
+                codeCompletion.add(cyclicExpandWordBackward);
+            
+            code.add(codeCompletion);
+            code.add(inspectCode);
+            code.add(codeCleanup);
+            
+                // We add the JMenuItems for the analyse code
+                analyzeCode.add(silentCodeCleanup);
+                analyzeCode.add(runInspectionByName);
+                analyzeCode.add(configureCurrentFileAnalysis);
+                analyzeCode.add(viewOfflineInspectionResults);
+                analyzeCode.add(inferNullity);
+                analyzeCode.add(dependanciesAnalyseCode);
+                analyzeCode.add(backwardDependancies);
+                analyzeCode.add(moduleDependancies);
+                analyzeCode.add(cyclicDependancies);
+                analyzeCode.add(dataFlowToHere);
+                analyzeCode.add(dataFlowFromHere);
+            
+            code.add(analyzeCode);
+            
+            code.add(analyzeStackTrace);
+            code.add(insertLiveTemplate);
+            code.add(saveAsLiveTemplate);
+            code.add(surroundWith);
+            code.add(unwrapRemove);
+            
+                // We add the JMenuItems for folding
+                foldingCode.add(expandCode);
+                foldingCode.add(expandRecursively);
+                foldingCode.add(expandAll);
+                foldingCode.add(collapseCode);
+                foldingCode.add(collapseRecursively);
+                foldingCode.add(collapseAll);
+                foldingCode.add(expandToLevel);
+                foldingCode.add(expandAllToLevel);
+                foldingCode.add(expandDocComments);
+                foldingCode.add(collapseDocComments);
+                foldingCode.add(foldSelectionRemove);
+                foldingCode.add(foldCodeBlock);
+            
+            code.add(foldingCode);
+            code.add(commentWithLineComment);
+            code.add(commentWithBlockComment);
+            code.add(reformatFile);
+            code.add(autoIndentLines);
+            code.add(rearrangeCode);
+            code.add(moveStatementDown);
+            code.add(moveStatementUp);
+            code.add(moveStatementLeft);
+            code.add(moveStatementRight);
+            code.add(moveLineDown);
+            code.add(moveLineUp);
+            code.add(updateCopyRight);
+            code.add(generateModuleInfoDescriptors);
+            
         this.add(code);
         this.add(refactor);
         this.add(build);

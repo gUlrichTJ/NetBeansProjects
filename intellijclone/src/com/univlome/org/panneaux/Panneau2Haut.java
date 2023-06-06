@@ -4,6 +4,7 @@
  */
 package com.univlome.org.panneaux;
 
+import com.univlome.org.boutons.BoutonImage;
 import com.univlome.org.fenetres.Fenetre;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -26,6 +27,7 @@ import javax.swing.border.LineBorder;
 // iconexperience.com
 public class Panneau2Haut extends JMenuBar {
     
+    BoutonImage smartPhoneBouton = new BoutonImage("/home/mgraciano/NetBeansProjects/images/smartphone.png", "SmartPhone beau");
     // We try with the button run
     Icon runIcon = new ImageIcon("/home/mgraciano/NetBeansProjects/images/play-store.png");
     Icon smartPhone = new ImageIcon("/home/mgraciano/NetBeansProjects/images/smartphone.png");
@@ -66,7 +68,8 @@ public class Panneau2Haut extends JMenuBar {
             }
         });
         
-        this.add(addImageAndString2(smartPhone, "Google Pixelbook (mobile)"));
+        //this.add(addImageAndString2(smartPhone, "Google Pixelbook (mobile)"));
+        this.add(smartPhoneBouton);
         this.add(addImageAndString2(mobilePhone, "emulator-5554"));
         //this.add(addImageAndString(runIcon, ""));
         this.add(runButton);
