@@ -4,6 +4,7 @@
  */
 package com.univlome.org.boutons;
 
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,9 +22,11 @@ public class BoutonImage extends JButton {
         ImageIcon icon = new ImageIcon(cheminImage);
         
         // Nous créons un JLabel pour recevoir les deux
-        JLabel label = new JLabel();
-        label.setFont(new Font("Arial", Font.BOLD, 14));
-        label.setIcon(icon);
-        label.setText(texte);
+        
+        setIcon(icon);
+        setText(texte);
+        setFont(new Font("Arial", Font.BOLD, 15));
+        setForeground(Color.blue);
+        setBackground(Color.white);
     }
 }
