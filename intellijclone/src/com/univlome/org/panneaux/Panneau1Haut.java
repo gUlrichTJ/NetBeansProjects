@@ -795,7 +795,21 @@ public class Panneau1Haut extends JMenuBar {
                 foldingCode.add(collapseCode);
                 foldingCode.add(collapseRecursively);
                 foldingCode.add(collapseAll);
+                
+                    expandToLevel.add(unCode);
+                    expandToLevel.add(deuxCode);
+                    expandToLevel.add(troisCode);
+                    expandToLevel.add(quatreCode);
+                    expandToLevel.add(cinqCode);
+                
                 foldingCode.add(expandToLevel);
+                
+                    expandAllToLevel.add(unExpandAll);
+                    expandAllToLevel.add(deuxExpandAll);
+                    expandAllToLevel.add(troisExpandAll);
+                    expandAllToLevel.add(quatreExpandAll);
+                    expandAllToLevel.add(cinqExpandAll);
+                
                 foldingCode.add(expandAllToLevel);
                 foldingCode.add(expandDocComments);
                 foldingCode.add(collapseDocComments);
