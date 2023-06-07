@@ -8,7 +8,6 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 /**
  *
@@ -26,7 +25,8 @@ public class BoutonImage extends JButton {
         setIcon(icon);
         setText(texte);
         setFont(new Font("Arial", Font.BOLD, 15));
-        setForeground(Color.blue);
+        setForeground(Color.black);
         setBackground(Color.white);
+        setVisible(true);
     }
 }

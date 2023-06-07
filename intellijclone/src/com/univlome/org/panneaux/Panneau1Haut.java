@@ -418,6 +418,8 @@ public class Panneau1Haut extends JMenuBar {
         JMenuItem updateCopyRight = new JMenuItem("Update Copyright...");
         JMenuItem generateModuleInfoDescriptors = new JMenuItem("Generate module-info Descriptors");
         
+        
+        
     JMenu refactor = new JMenu("Refactor");
     JMenu build = new JMenu("Build");
     JMenu run = new JMenu("Run");

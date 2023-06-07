@@ -28,6 +28,8 @@ import javax.swing.border.LineBorder;
 public class Panneau2Haut extends JMenuBar {
     
     BoutonImage smartPhoneBouton = new BoutonImage("/home/mgraciano/NetBeansProjects/images/smartphone.png", "SmartPhone beau");
+    BoutonImage emulator = new BoutonImage("/home/mgraciano/NetBeansProjects/images/mobilephone.png", "emulator-5554");
+
     // We try with the button run
     Icon runIcon = new ImageIcon("/home/mgraciano/NetBeansProjects/images/play-store.png");
     Icon smartPhone = new ImageIcon("/home/mgraciano/NetBeansProjects/images/smartphone.png");
