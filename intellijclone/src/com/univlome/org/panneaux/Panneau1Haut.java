@@ -882,6 +882,15 @@ public class Panneau1Haut extends JMenuBar {
                 migratePackages.add(createNewMigration);
                 
             refactor.add(migratePackages);
+            
+            refactor.add(invertBoolean);
+            refactor.add(internationalize);
+            refactor.add(removeUnusedResources);
+            refactor.add(migrateToAppCompat);
+            refactor.add(migrateToAndroidX);
+            refactor.add(migrateToNonTransitive);
+            refactor.add(addRightToLeft);
+            
         
         this.add(refactor);
         this.add(build);
