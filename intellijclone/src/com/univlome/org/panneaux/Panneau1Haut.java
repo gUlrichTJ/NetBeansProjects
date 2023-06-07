@@ -418,8 +418,36 @@ public class Panneau1Haut extends JMenuBar {
         JMenuItem updateCopyRight = new JMenuItem("Update Copyright...");
         JMenuItem generateModuleInfoDescriptors = new JMenuItem("Generate module-info Descriptors");
         
+        // Les JMenuItems pour refactor
+        JMenuItem refactorThis = new JMenuItem("Refactor This...            Ctrl+Alt+Shift+T");
+        JMenuItem renameRefactor = new JMenuItem("Rename...             Shift+F6");
+        JMenuItem renameFileRefactor = new JMenuItem("Rename File...");
         
+        JMenu extractIntroduce = new JMenu("Extract/Introduce");
         
+            // Les JMenuItems pour extract/introduce
+            JMenuItem variableRefactor = new JMenuItem("Variable...             Ctrl+Alt+V");
+            JMenuItem methodRefactor = new JMenuItem("Method...             Ctrl+Alt+M");
+            JMenuItem extractFlutterWidget = new JMenuItem("Extract Flutter Widget...       Ctrl+Alt+W");
+            
+        JMenuItem inlineRefactor = new JMenuItem("Inline...             Ctrl+Alt+N");
+        JMenuItem moveFile = new JMenuItem("Move File...            F6");
+        JMenuItem copyFile = new JMenuItem("Copy File...            F5");
+        JMenuItem safeDeleteRefactor = new JMenuItem("Safe Delete...            Alt+Delete");
+        
+        JMenu migratePackages = new JMenu("Migrage Packages and Classes");
+        
+            JMenuItem jUnit4 = new JMenuItem("JUnit(4.x -> 5.0");
+            JMenuItem createNewMigration = new JMenuItem("Create New Migration...");
+        
+        JMenuItem invertBoolean = new JMenuItem("Invert Boolean...");
+        JMenuItem internationalize = new JMenuItem("Internationalize...");
+        JMenuItem removeUnusedResources = new JMenuItem("Remove Unused Resources...");
+        JMenuItem migrateToAppCompat = new JMenuItem("Migrate to AppCompat...");
+        JMenuItem migrateToAndroidX = new JMenuItem("Migrate to AndroidX...");
+        JMenuItem migrateToNonTransitive = new JMenuItem("Migrate to Non-Transitive R Classes...");
+        JMenuItem addRightToLeft = new JMenuItem("Add Right-to-Left (RTL) Support...");
+            
     JMenu refactor = new JMenu("Refactor");
     JMenu build = new JMenu("Build");
     JMenu run = new JMenu("Run");
@@ -834,6 +862,27 @@ public class Panneau1Haut extends JMenuBar {
             code.add(generateModuleInfoDescriptors);
             
         this.add(code);
+        
+            // Nous ajoutons les jmenuitems au refactor
+            refactor.add(refactorThis);
+            refactor.add(renameRefactor);
+            refactor.add(renameFileRefactor);
+            
+                extractIntroduce.add(variableRefactor);
+                extractIntroduce.add(methodRefactor);
+                extractIntroduce.add(extractFlutterWidget);
+            
+            refactor.add(extractIntroduce);
+            refactor.add(inlineRefactor);
+            refactor.add(moveFile);
+            refactor.add(copyFile);
+            refactor.add(safeDeleteRefactor);
+            
+                migratePackages.add(jUnit4);
+                migratePackages.add(createNewMigration);
+                
+            refactor.add(migratePackages);
+        
         this.add(refactor);
         this.add(build);
         this.add(run);
